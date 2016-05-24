@@ -11,7 +11,7 @@ then
     rm -rf $OUTPUT_DIR
 else
     mkdir -p $OUTPUT_DIR
-    ghc \
+    stack ghc -- \
         --make \
         -Werror \
         -fwarn-unused-imports \
@@ -22,7 +22,7 @@ else
     cd $OUTPUT_DIR
     ./$EXAMPLE
     if ! [ -n "$ARDUINO_MAKEFILE_PATH" ]; then
-        ARDUINO_MAKEFILE_PATH="../../Arduino-Makefile/Arduino.mk"
+        ARDUINO_MAKEFILE_PATH="/usr/local/opt/arduino-mk/Arduino.mk"
     fi
     cat << EOF > Makefile
 NO_CORE = Yes
