@@ -35,5 +35,10 @@ executable frp-arduino-make
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
-  build-depends:       base, optparse-applicative, frp-arduino, ghc, ghc-paths
+  build-depends:       base,
+                       optparse-applicative,
+                       frp-arduino,
+                       ghc,
+                       ghc-paths,
+                       optparse-applicative
   default-language:    Haskell2010
